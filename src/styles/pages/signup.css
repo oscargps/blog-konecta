@@ -1,0 +1,32 @@
+.Signup{
+    height: 100%;
+    width: 100%;
+    text-align: center;
+}
+.Signup__logo{
+    height:70px;
+    border-radius: 10px;
+}
+
+.Signup__title{
+    background-color:#032556;
+    color : white;
+    padding:5px;
+}
+.Signup__form{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.Signup__form-footer{
+    width: 100%;
+    background-color:#032556;
+    color : white;
+    padding:5px;
+    position : absolute;
+    bottom: 0;
+    right: 0;
+}
