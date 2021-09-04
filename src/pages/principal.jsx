@@ -1,12 +1,12 @@
 import React from 'react';
-
+import Navbar from '../components/navbar'
 
 const Principal = () => {
 
 
     return (
         <div>
-            pagina principal
+            <Navbar/>
         </div>
     )
 }

@@ -17,8 +17,8 @@ const LoginForm = (props) => {
     e.preventDefault();
     let resp = await Login(form);
     if (resp) {
-       sessionStorage.setItem('resp',true);
-        window.location.href="/";
+       sessionStorage.setItem('resp',JSON.stringify(resp));
+       window.location.href="/";
     } else {
       Swal.fire({
         title: "Información incorrecta",
