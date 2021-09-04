@@ -8,11 +8,17 @@ import Modal from "react-bootstrap/Modal";
 // import getInfo from "../utils/getInfo";
 import Swal from "sweetalert2";
 // import ChangePassword from "./changePassword";
+import NewEntry from "./newentry";
+import { Button } from "bootstrap";
 
 const Navbar = (props) => {
   const [show, setShow] = useState(false);
-  const handleClose = () => setShow(false);
-  let user = JSON.parse(sessionStorage.getItem("resp"))
+  const [show2, setShow2] = useState(false);
+  const handleClose = () => {
+    setShow(false);
+    setShow2(false);
+  };
+  let user = JSON.parse(sessionStorage.getItem("resp"));
   const handleLogout = () => {
     Swal.fire({
       title: "¿Cerrar sesión?",
@@ -34,6 +40,9 @@ const Navbar = (props) => {
       <img className="Navbar-logo" src={Logo} alt="" />
       <h3 className="Navbar-title">KONECTA Blog</h3>
       <div className="Navbar-Menu">
+        <button className="btn btn-success btn-sm" onClick={() => setShow2(true)}>
+          Nueva entrada
+        </button>
         <DropdownButton
           variant="outline-light"
           size="sm"
@@ -50,6 +59,12 @@ const Navbar = (props) => {
             <Modal.Title>Cambiar contraseña</Modal.Title>
           </Modal.Header>
           <Modal.Body>{/* <ChangePassword /> */}</Modal.Body>
+        </Modal>
+        <Modal show={show2} onHide={handleClose}>
+          <Modal.Header closeButton>
+            <Modal.Title>Crear entrada</Modal.Title>
+          </Modal.Header>
+          <Modal.Body><NewEntry onFinish = {handleClose}/></Modal.Body>
         </Modal>
       </div>
     </div>
