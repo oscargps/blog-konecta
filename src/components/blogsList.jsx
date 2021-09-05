@@ -23,8 +23,6 @@ const BlogsList = () => {
           {blogs.map((blog) => (
               <>
             <BlogItem key={blog.id} data={blog} />
-            <BlogItem key={blog.id} data={blog} />
-            <BlogItem key={blog.id} data={blog} />
             </>
           ))}
         </div>
