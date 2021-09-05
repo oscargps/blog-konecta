@@ -40,7 +40,10 @@ const Navbar = (props) => {
       <img className="Navbar-logo" src={Logo} alt="" />
       <h3 className="Navbar-title">KONECTA Blog</h3>
       <div className="Navbar-Menu">
-        <button className="btn btn-success btn-sm" onClick={() => setShow2(true)}>
+        <button
+          className="btn btn-success btn-sm"
+          onClick={() => setShow2(true)}
+        >
           Nueva entrada
         </button>
         <DropdownButton
@@ -49,6 +52,11 @@ const Navbar = (props) => {
           title={user.name}
           id="dropdown-menu-align-right"
         >
+          {user.type == "administrator" && (
+            <Dropdown.Item onClick={() => window.location.href ="/panel-admin"}>
+              Panel de administrador
+            </Dropdown.Item>
+          )}
           <Dropdown.Item onClick={() => setShow(true)}>
             Cambiar contraseña
           </Dropdown.Item>
@@ -64,7 +72,9 @@ const Navbar = (props) => {
           <Modal.Header closeButton>
             <Modal.Title>Crear entrada</Modal.Title>
           </Modal.Header>
-          <Modal.Body><NewEntry onFinish = {handleClose}/></Modal.Body>
+          <Modal.Body>
+            <NewEntry onFinish={handleClose} />
+          </Modal.Body>
         </Modal>
       </div>
     </div>

@@ -1,0 +1,17 @@
+
+.panel-admin_navbar{
+    height:30%;
+    background-color:#032556;
+    color : white;
+    padding:1em;
+    margin-bottom: 1em;
+}
+.panel-admin{
+    height:80%;
+    display:flex;
+    justify-content: space-around
+}
+.panel-admin_options{
+    display:flex;
+    justify-content: space-around;
+}

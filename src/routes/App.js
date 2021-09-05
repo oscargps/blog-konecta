@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LogPage from "../pages/login";
 import Principal from "../pages/principal";
+import AdminPanel from "../pages/adminPanel";
 import Signup from "../pages/signup";
 import BlogDetail from "../pages/blogDetail";
 import './App.css';
@@ -15,6 +16,9 @@ function App() {
       <Switch>
         <Route exact path="/">
           {loggedIn ? <Principal /> : <LogPage />}
+        </Route>
+        <Route exact path="/panel-admin">
+          {loggedIn ? <AdminPanel /> : <LogPage />}
         </Route>
         <Route exact path="/signup" component={Signup} />
         <Route path="/blog/:slug" children={<BlogDetail />} />
