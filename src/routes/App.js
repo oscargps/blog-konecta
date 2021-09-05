@@ -3,6 +3,7 @@ import { BrowserRouter, Route, Switch, Redirect } from "react-router-dom";
 import LogPage from "../pages/login";
 import Principal from "../pages/principal";
 import Signup from "../pages/signup";
+import BlogDetail from "../pages/blogDetail";
 import './App.css';
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
           {loggedIn ? <Principal /> : <LogPage />}
         </Route>
         <Route exact path="/signup" component={Signup} />
+        <Route path="/blog/:slug" children={<BlogDetail />} />
       </Switch>
     </BrowserRouter>
     </div>
